@@ -1,0 +1,65 @@
+﻿@page
+@model PeopleManagment.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>People</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="People.Id" />
+            <div class="form-group">
+                <label asp-for="People.Name" class="control-label"></label>
+                <input asp-for="People.Name" class="form-control" />
+                <span asp-validation-for="People.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="People.BirthDate" class="control-label"></label>
+                <input asp-for="People.BirthDate" class="form-control" />
+                <span asp-validation-for="People.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="People.Gender" class="control-label"></label>
+                <input asp-for="People.Gender" class="form-control" />
+                <span asp-validation-for="People.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="People.email" class="control-label"></label>
+                <input asp-for="People.email" class="form-control" />
+                <span asp-validation-for="People.email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="People.CPF" class="control-label"></label>
+                <input asp-for="People.CPF" class="form-control" />
+                <span asp-validation-for="People.CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="People.StartDate" class="control-label"></label>
+                <input asp-for="People.StartDate" class="form-control" />
+                <span asp-validation-for="People.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="People.Team" class="control-label"></label>
+                <input asp-for="People.Team" class="form-control" />
+                <span asp-validation-for="People.Team" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
